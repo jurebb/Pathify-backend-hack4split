@@ -1,0 +1,445 @@
+/* FONTS */
+
+h1,
+h2,h3,h4 {
+    margin:0;
+}
+
+#header-background {
+    height: 85vh;
+    width: 100wh;
+    background-image: url('images/hiker.jpg');
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+}
+
+.background-cover {
+    height: 85vh;
+    width: 100wh;
+    background-color:rgba(68,67,67,0.34);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+.navbar-inverse {
+    background-image: none;
+    background-color: transparent;
+    border:0;
+    color:#fff;
+    padding:25px 100px 0 100px;
+}
+
+#login-button {
+    background-color: rgba(69,200,146,0.65);
+    border: 2px solid #45C892;
+    margin-top:13px;
+}
+
+#login-button>a {
+    padding:7px;
+}
+
+.navbar-nav {
+    float:right;
+     z-index: 2;
+}
+
+.navbar-inverse .navbar-nav>li {
+    border-bottom: 2px solid #fff;
+    margin:0 15px 0 15px;
+}
+
+.navbar-inverse .navbar-collapse {
+    border:0;
+}
+
+.navbar-inverse .navbar-nav>li.login-button {
+    background-color: rgba(69,200,146,0.65);
+    border: 2px solid #45C892;
+    margin-top:13px;
+}
+
+.navbar-inverse .navbar-nav>li.login-button>a {
+    padding:7px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:#fff;
+    font-size:1.3em;
+    text-shadow: 2px 2px 20px #000;
+    padding:20px 0px 5px 0px;
+    text-align: center;
+}
+
+.collpse {
+    background-color: transparent;
+}
+
+button>.navbar-toggle {
+    padding:12px 12px !important;
+}
+
+.navbar-inverse .navbar-toggle {
+    border:1px solid #45C892;
+    background-color:rgba(255,255,255,0.75);
+}
+
+.navbar-inverse .navbar-toggle:hover {
+    border:1px solid #45C892;
+    background-color:rgba(255,255,255,0.75);
+}
+
+.navbar-toggle .icon-bar {
+    background-color:#45C892 !important;
+}
+
+.navbar-toggle {
+    z-index: 2 !important;
+}
+
+.activated a {
+    color:#45C892 !important;
+}
+
+.activated {
+    border-bottom: 2px solid #45C892 !important;
+}
+
+/***** MY TRIPS *****/
+.header-container {
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:0 auto 30px auto;
+    bottom: 20;
+    color:#fff;
+    display: flex;
+    max-width: 400px;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 2px #000;
+    font-family: 'Segoe UI' sans-serif;
+    z-index: 1;
+    
+    display:flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.header-container > .user-image {
+    width: 100px;
+    height: 100px;
+    border:1px solid #ddd;
+    border-radius: 50%;
+    background-image: url("images/vana.jpg");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 1px 2px 8px #eee;
+}
+
+.header-container > .user-data p:first-child{
+    margin-left: 2rem;
+    margin-top: 25px;
+    font-size: 2.1rem;
+}
+
+.header-container > .user-data p:last-child{
+    font-size: 1.7rem;
+    text-shadow: none;
+    text-align: center;
+    margin-top: -0.7rem;
+}
+
+
+
+.header-bottom-texture {
+    position: absolute;
+    bottom: 0;
+    background-repeat:repeat-x;
+    width:100%;
+    height: 30px;
+}
+
+.main-carousel{
+    width: 100%;
+    position: relative;
+    padding-left: 0;
+   /* background-color: rgb(221,221,221);*/
+}
+
+.main-container {
+    height: 470px;
+    position: relative;
+}
+
+.container {
+    margin-top: 40px auto 20px auto;
+}
+
+.headers > h3 {
+    color: #272727;
+    font-family: 'Titillium Web';
+    text-align: center;
+
+    text-transform: uppercase;
+    padding-top: 5px;
+    margin-bottom: 0.3em;
+    font-size: 2.5em;
+    margin-top: 7rem;
+}
+
+.headers > h3 > strong{
+    color: #45C892;
+}
+
+.container .subtitle {
+    color:#fff;
+    font-family: 'Titillium Web';
+    text-align: center;
+    padding-top: 0px;
+    font-size: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+.trips {
+    margin:20px auto 0 autp;
+    height: 280px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.trip {
+    height: 280px;
+    background-color: #fff;
+    width:230px;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow:2px 2px 2px rgb(221,221,221);
+}
+
+.row-fluid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*carousel*/
+
+.carousel {
+    margin-bottom: 0;
+	padding: 0 40px 30px 40px;
+}
+
+.well{
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.carousel-control.right{
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control.right > i{
+    color: #45C892;
+}
+
+.carousel-control.left > i{
+    color: #45C892;
+}
+
+.carousel-control.left{
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -20px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+.carousel-indicators .active {
+background: #333333;
+}
+
+.trip >.trip-haeder {
+    background-color: #fff;
+    height: 65px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    justify-content: center;
+}
+
+.trips > .trip h4 {
+    text-align: center;
+    margin:auto;
+    color:#272727;
+    font-family: 'Titillium Web';
+}
+
+.trip > .trip-image-container {
+    height: 215px;
+    width: 230px;
+    
+}
+
+.trip-image-container > img{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-arrows {
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0; 
+    margin:30px auto 40px auto; 
+    display:flex;
+    flex-direction: row;
+    width: 40px;
+}
+
+.nav-arrows .fa {
+    color:#fff;
+    margin:0 10px 0 10px;
+}
+
+.main-bottom-texture{
+    position: absolute;
+    bottom: 0;
+    background-image: url('images/texture_bottom.png');
+    background-repeat:repeat-x;
+    width:100%;
+    margin: 0;
+    height: 30px;
+}
+
+.footer-bottom-texture {
+    position: absolute;
+    bottom: 0;
+    background-image: url('images/texture_top.png');
+    background-repeat:repeat-x;
+    width:100%;
+    height: 15px;
+}
+
+
+footer {
+    background-image: url('images/texture.png');
+    height: 60px;
+    position: relative;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+    
+}
+
+footer img{
+    height: 30px;
+}
+
+.footer-bottom-texture {
+    position: absolute;
+    bottom: 0;
+    background-image: url('images/texture_top.png');
+    background-repeat:repeat-x;
+    width:100%;
+    height: 15px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(255,255,255,0.7);
+  
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.trip:hover .overlay {
+  bottom: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.text {
+  white-space: pre-wrap; 
+  color: #272727;
+  font-size: 16px;
+  position: absolute;
+  overflow: hidden;
+  width: 180px;
+  font-family: 'Titillium Web';
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.fa-angle-double-right{
+    position: absolute;
+    top: 88%;
+    left: 88%;
+}
+
+@media(max-width:700px) {
+    
+    .trips {
+        max-width: 230px;
+        margin:0 auto 0 auto;
+    }
+    
+    .header-container {
+        margin-top:200px;
+        margin-right: 50px;
+    }
+    
+    .navbar-inverse {
+        background-image: none;
+        background-color: transparent;
+        border:0;
+        color:#fff;
+        padding:25px 30px 0 30px;
+    }
+}
+
+@media(max-width:500px) {
+    .header-container {
+        margin:100px 20px 0 20px;
+    }
+    
+}

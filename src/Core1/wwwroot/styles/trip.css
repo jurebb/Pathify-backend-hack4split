@@ -1,0 +1,450 @@
+
+#header-background {
+    height: 70vh;
+    width: 100%;
+    background-image: url('images/split-pogled.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.background-cover {
+    height: 70vh;
+    width: 100wh;
+    background-color:rgba(68,67,67,0.45);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-inverse {
+    background-image: none;
+    background-color: transparent;
+    border:0;
+    color:#fff;
+    padding:25px 100px 0 100px;
+}
+
+.navbar-nav {
+    float:right;
+     z-index: 2;
+}
+
+.activated a {
+    color:#45C892 !important;
+}
+
+#login-button {
+    background-color: rgba(69,200,146,0.65);
+    border: 2px solid #45C892;
+    margin-top:13px;
+}
+
+#login-button>a {
+    padding:7px;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 45%;
+    left: 3%;
+}
+
+.hidden{
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.left > i{
+    color: #fff;
+}
+
+.right > i{
+    color: #fff;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 45%;
+    right: 2%;
+}
+
+.left:hover, .right:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.no-right-margin{
+    position: relative;
+}
+
+.activated {
+    border-bottom: 2px solid #45C892 !important;
+}
+
+.navbar-inverse .navbar-nav>li {
+    border-bottom: 2px solid #fff;
+    margin:0 15px 0 15px;
+}
+
+.navbar-inverse .navbar-collapse {
+    border:0;
+}
+
+.navbar-inverse .navbar-nav>li.login-button {
+    background-color: rgba(69,200,146,0.65);
+    border: 2px solid #45C892;
+    margin-top:13px;
+}
+
+.navbar-inverse .navbar-nav>li.login-button>a {
+    padding:7px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:#fff;
+    font-size:1.3em;
+    text-shadow: 2px 2px 20px #000;
+    padding:20px 0px 5px 0px;
+    text-align: center;
+}
+
+.collpse {
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle {
+    border:1px solid #45C892;
+    background-color:rgba(255,255,255,0.75);
+}
+
+.navbar-inverse .navbar-toggle:hover {
+    border:1px solid #45C892;
+    background-color:rgba(255,255,255,0.75);
+}
+
+.navbar-toggle .icon-bar {
+    background-color:#45C892 !important;
+}
+
+
+
+/***** MY TRIPS *****/
+.header-container {
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:0 auto 30px auto;
+    bottom: 20;
+    color:#fff;
+    display: flex;
+    max-width: 400px;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 2px #000;
+    font-family: 'Segoe UI' sans-serif;
+    z-index: 1;
+    
+    display:flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.header-container > .user-image {
+    width: 100px;
+    height: 100px;
+    border:1px solid #ddd;
+    border-radius: 50%;
+    background-image: url("images/vana.jpg");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 1px 2px 8px #eee;
+}
+
+.header-container > .user-data p:first-child{
+    margin-left: 2rem;
+    margin-top: 25px;
+    font-size: 2.1rem;
+}
+
+.header-container > .user-data p:last-child{
+    font-size: 1.7rem;
+    text-shadow: none;
+    text-align: center;
+    margin-top: -0.7rem;
+}
+
+
+.route-info-container{
+    min-height: 30vh;
+    width: 100%;
+}
+
+.route-info-container > .route-data{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    margin: 30px auto;
+    align-items: center;
+}
+
+.route-data > .route-name{
+    font-size: 1.7em !important;
+}
+
+.route-data > .route-name > strong{
+    font-size: 4rem;
+    color: #45C892;
+}
+
+.route-data > .route-description > p{
+    font-size: 1.2em !important;
+    line-height: 2.8rem;
+    padding: 2rem 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.google-maps{
+    min-height: 60vh;
+    width: 100wh;
+    background-color: #45C892;
+    background-image: url("images/google-maps.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.route-pictures-container{
+    width: 100%;
+    /*Background*/
+    background: #eee; /* For browsers that do not support gradients */
+   
+}
+
+.route-pictures-container > .social-share-container > p > strong{
+    color: #45C892;
+    font-size: 4.5rem;
+}
+
+.pictures-container-title {
+    margin:40px 0;
+    text-align: center;
+}
+
+.pictures-container-title > p {
+    font-size: 4rem;
+    font-family: 'Segoe UI' sans-serif;
+    line-height: 4rem;
+}
+
+.pictures-container-title > p > strong{
+    color: #45C892;
+    font-size: 4.5rem;
+}
+
+.route-pictures-container > .route-pictures{
+    display: flex;
+    padding: 8vh;
+    flex-wrap: wrap;
+}
+
+#route-pictures {
+    height: 300px;
+    display:flex;
+    flex-direction: row;
+}
+
+#route-pictures img {
+    object-fit: cover;
+    object-position: top;
+    height: 300px;
+    width:50%;
+}
+
+.share-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 35px 0 0 0;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.share-container > .social-share-container{
+    display: flex;
+}
+
+.share-container > .social-share-container > p{
+    font-size: 4rem;
+    font-family: 'Segoe UI' sans-serif;
+    line-height: 4rem;
+}
+
+.share-container > .social-share-container > p > strong{
+    color: #45C892;
+    font-size: 4.5rem;
+}
+
+.share-container > .social-share-container > .social-media-icons{
+    display: flex;
+    margin-left: 5rem;
+    align-self: center;
+}
+
+.share-container > .social-share-container > .social-media-icons > a{
+    height: 60px;
+    width: 60px;
+    margin-left: 3rem;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+}
+
+
+.link-title {
+    margin:15px 0 0 0;
+    font-size: 1.5em;
+}
+
+.link-container{
+    display: flex;
+    margin: 15px 0 30px 0;
+}
+
+.link-container > .link-image{
+    width: 50px;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #8e8e8e;
+    background-color:#ccc;
+}
+
+.link-container > .link-image > i{
+    color: #45C892;
+}
+
+.link-container > input{
+    width:300px;
+    height: 6vh;
+    border: none;
+    background-color: #eee;
+    padding: 2px 5px;
+    text-align: center;
+    color:#5a5a5a;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+
+.footer-bottom-texture {
+    position: absolute;
+    bottom: 0;
+    background-image: url('images/texture_top.png');
+    background-repeat:repeat-x;
+    width:100%;
+    height: 15px;
+}
+
+footer {
+    background-image: url('images/texture.png');
+    height: 60px;
+    position: relative;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+    border:0;
+    
+}
+
+footer img{
+    height: 30px;
+}
+
+@media(min-width:1200px) {
+    .no-right-margin {
+        margin-right: 0 !important;
+        padding-right: 0;
+    }
+    
+    .route-pictures-container {
+        margin-right: 0 !important;
+        padding-right: 0;
+    }
+    
+    .pictures-container-title {
+    margin:100px 0;
+    text-align: center;
+    }
+}
+
+@media(max-width:700px) {
+    .header-container {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+   .navbar-inverse {
+    background-image: none;
+    background-color: transparent;
+    border:0;
+    color:#fff;
+    padding:25px 30px 0 30px;
+    }
+
+    .route-pictures{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .route-pictures > .route-image{
+        margin-top: 1rem;
+    }
+
+    .social-share-container{
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+    }
+
+    .social-share-container p{
+        margin-bottom: 3rem;
+    }
+    
+    .link-container > input{
+        width: 60vw;
+        overflow: hidden;
+    }
+    
+    #route-pictures img {
+        object-fit: cover;
+        object-position: top;
+        height: 300px;
+        width:100%;
+    }
+}
+
+@media(max-width:500px) {
+    .header-container {
+        margin:100px 20px 0 20px;
+    }
+}

@@ -1,0 +1,301 @@
+﻿@model Core1.ViewModels.TripStop
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- MetaData -->
+    <meta charset="UTF-8">
+    <title>Pathify</title>
+    <meta name="description" content="Explore new places and share them with your friends">
+    <meta name="keywords" content="pathify,places,share,friends">
+    <meta name="author" content="Jure Baban, Toni Beović, Vana Brajčić, Božo Penović">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="~/images/favicon.png" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="~/styles/trip.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+</head>
+
+
+<!--
+<body>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-controller="Auth" asp-action="Logout">Logout</a>
+    }
+    <h1>This is a test</h1>
+    <ul>
+        <li>@Model.Name </li>
+        <li>@Model.Descripton </li>
+        <li>@Model.UserName </li>
+        <li>stops:</li>
+        @foreach (var emp in Model.Stops)
+        {
+            <li>@emp.Latitude </li>
+
+        }
+        @foreach (var emp in Model.Images)
+        {
+            <li>@emp.Name </li>
+
+        }
+
+    </ul>
+</body>
+</html>
+    -->
+
+<body>
+    <div id="header-background">
+        <div class="background-cover">
+
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="~/images/logo.png">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a asp-controller="Trips" asp-action="Index">HOME</a></li>
+                            <li class="activated"><a asp-controller="Trips" asp-action="Explore">EXPLORE</a></li>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <li id="login-button"><a asp-controller="Trips" asp-action="Index">LOGIN</a></li>
+                            }
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a asp-controller="Trips" asp-action="MyTrips">MY TRIPS</a></li>
+                                <li style="border-bottom: 0;"><a style="font-size: 14px !important; margin-left: 50px;">Hello, @User.Identity.Name</a></li>
+                                <li id="login-button"><a asp-controller="Trips" asp-action="Logout">LOGOUT</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-container">
+                <div class="user-image">
+                </div>
+                <div class="user-data">
+                    <p>@User.Identity.Name</p>
+                    <p>@Model.DateCreated</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="route-info-container">
+        <div class="route-data">
+            <p class="route-name"><strong>@Model.Name</strong>  šetnja</p>
+            <div class="route-description">
+                <p>
+                    @Model.Descripton
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="map"></div>
+
+    </div>
+
+    <div class="container route-pictures-container">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-md-4">
+            <div class="pictures-container-title">
+                <p class="route-name"><strong>Photos</strong> from <br>this <strong>route</strong></p>
+            </div>
+        </div>
+        <div class="no-right-margin col-xs-12 col-sm-12 col-md-8 col-md-8">
+            <div id="route-pictures">
+                <img src="~/images/tripps/split2.jpg" class="hidden">
+                <img src="~/images/tripps/split3.jpg" class="hidden">
+                <img src="~/images/tripps/split4.jpg" class="hidden">
+                <img src="~/images/tripps/split5.jpg" class="hidden">
+                <img src="~/images/tripps/split6.jpg" class="hidden">
+
+                <a class="left "><i class="fa fa-angle-left fa-3x" aria-hidden="true"></i></a>
+                <a class="right "><i class="fa fa-angle-right fa-3x" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="share-container">
+        <h4 class="link-title">Link for sharing:</h4>
+        <div class="link-container">
+            <div class="link-image">
+                <i class="fa fa-link fa-2x" aria-hidden="true"></i>
+            </div>
+            <input name="link-field" placeholder="@Context.Request.Host@Context.Request.Path" type="text">
+        </div>
+
+        <div class="footer-bottom-texture"></div>
+    </div>
+    <footer>
+        <a href="#"><img src="~/images/logo.png" /></a>
+    </footer>
+
+    <!--<script src="~/js/map.js"></script>-->
+
+    <script>
+        function initMap() {
+            /*var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 3,
+                center: {lat: 0, lng: -180},
+                mapTypeId: 'terrain'
+            });*/
+
+            var styledMapType = new google.maps.StyledMapType(
+            [
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#3dc38a"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#60c3ec"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+            ],
+            {name: 'Styled Map'});
+
+            // Create a map object, and include the MapTypeId to add
+            // to the map type control.
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 43.5148461, lng: 16.414064},
+                zoom: 13,
+                mapTypeControlOptions: {
+                    mapTypeIds: ['styled_map']
+                }
+            });
+
+            //Associate the styled map with the MapTypeId and set it to display.
+            map.mapTypes.set('styled_map', styledMapType);
+            map.setMapTypeId('styled_map');
+
+            //$.get();
+            //$.post();
+
+
+            var routeMap = [
+                @foreach (var loc in Model.Stops) {
+                <text>{lat: @loc.Latitude.ToString("0.000000", System.Globalization.CultureInfo.InvariantCulture), lng: @loc.Longitude.ToString("0.000000", System.Globalization.CultureInfo.InvariantCulture)},</text>}];
+
+            var route = new google.maps.Polyline({
+                path: routeMap,
+                geodesic: false,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+
+            route.setMap(map);
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCl9ufx_OIkwcwrxj7cKmny_mWI-X6ADnQ&callback=initMap">
+    </script>
+    <script src="~/js/slider.js"></script>
+</body>
+</html>

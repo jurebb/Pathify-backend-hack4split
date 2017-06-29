@@ -1,0 +1,463 @@
+/* FONTS */
+
+h1,
+h2,h3,h4 {
+    margin:0;
+}
+
+#header-background {
+    height: 100vh;
+    width: 100wh;
+    background-image: url('images/header_bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.background-cover {
+    height: 100vh;
+    width: 100wh;
+    background-color:rgba(68,67,67,0.34);
+    
+    display: flex;
+    flex-direction: column;
+}
+
+
+.navbar-inverse {
+    background-image: none;
+    background-color: transparent;
+    border:0;
+    color:#fff;
+    padding:25px 100px 0 100px;
+}
+
+.navbar-nav {
+    float:right;
+     z-index: 2;
+}
+
+.navbar-inverse .navbar-nav>li {
+    border-bottom: 2px solid #fff;
+    margin:0 15px 0 15px;
+}
+
+.navbar-inverse .navbar-collapse {
+    border:0;
+}
+
+#login-button {
+    background-color: rgba(69,200,146,0.65);
+    border: 2px solid #45C892;
+    margin-top:13px;
+}
+
+#login-button>a {
+    padding:7px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:#fff;
+    font-size:1.3em;
+    text-shadow: 2px 2px 20px #000;
+    padding:20px 0px 5px 0px;
+    text-align: center;
+}
+
+.activated a {
+    color:#45C892 !important;
+}
+
+.activated {
+    border-bottom: 2px solid #45C892 !important;
+}
+
+.collpse {
+    background-color: transparent;
+}
+
+button>.navbar-toggle {
+    padding:12px 12px !important;
+}
+
+.navbar-inverse .navbar-toggle {
+    border:1px solid #45C892;
+    background-color:rgba(255,255,255,0.75);
+}
+
+.navbar-inverse .navbar-toggle:hover {
+    border:1px solid #45C892;
+    background-color:rgba(255,255,255,0.75);
+}
+
+.navbar-toggle .icon-bar {
+    background-color:#45C892 !important;
+}
+
+.navbar-toggle {
+    z-index: 2 !important;
+}
+
+.header-container {
+    bottom: 20;
+    color:#fff;
+    max-width: 550px;
+    margin:40vh 0 0 15vw;
+    font-size: 1.8em;
+    text-shadow: 2px 2px 2px #000;
+    font-family: 'Titillium Web';
+    z-index: 1;
+}
+
+.header-container > .author {
+    font-size: 0.9em;
+    float:right;
+    padding-right: 40px;
+    text-shadow: 2px 2px 2px #000;
+}
+
+#get-started {
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0; 
+    margin:0 auto 0 auto; 
+    width: 200px;
+    color:#fff;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#get-started>p {
+    font-family: 'Titillium Web';
+    font-size: 1.5em !important;
+    text-shadow: 2px 2px 2px #000;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+    font-weight: 500;
+}
+
+#get-started>a {
+    color:#fff !important;
+}
+
+.fa-caret-down{
+    animation-name: bounce;
+    animation-duration:1.5s;
+    animation-iteration-count: infinite;
+    -o-animation-fill-mode:both;
+    color: #fff;
+    text-shadow: 2px 2px 2px #272727;
+}
+
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-20px);}
+	60% {transform: translateY(-10px);}
+}
+
+.header-bottom-texture {
+    position: absolute;
+    bottom: 0;
+    background-image: url('images/texture_top.png');
+    background-repeat:repeat-x;
+    width:100%;
+    height: 30px;
+}
+
+.main-carousel{
+    background-image: url('images/texture.png');
+    width: 100%;
+    position: relative;
+    padding-left: 0;
+}
+
+.main-container {
+    background-image: url('images/texture.png');
+    height: 470px;
+    position: relative;
+}
+
+.container {
+    margin-top: 40px auto 20px auto;
+}
+
+.headers > h3 {
+    color:#fff;
+    font-family: 'Titillium Web';
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 5px;
+    margin-bottom: 0.3em;
+    font-size: 2.5em;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px #181818 ;
+}
+
+.container .subtitle {
+    color:#fff;
+    font-family: 'Titillium Web';
+    text-align: center;
+    padding-top: 0px;
+    font-size: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+.trips {
+    margin:20px auto 0 autp;
+    height: 280px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.trip {
+    height: 280px;
+    background-color: #fff;
+    width:230px;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row-fluid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*carousel*/
+
+.carousel {
+    margin-bottom: 0;
+	padding: 0 40px 30px 40px;
+}
+
+.well{
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.carousel-control.right{
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control.left{
+    background-image: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -20px;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+	left: -12px;
+}
+.carousel-control.right {
+	right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+	background: #c0c0c0;
+}
+
+.carousel-indicators .active {
+background: #333333;
+}
+
+.trip >.trip-haeder {
+    background-color: #fff;
+    height: 65px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    justify-content: center;
+}
+
+.trips > .trip h4 {
+    text-align: center;
+    margin:auto;
+    color:#272727;
+    font-family: 'Titillium Web';
+}
+
+.trip > .trip-image-container {
+    height: 215px;
+    width: 230px;
+    
+}
+
+.trip-image-container > img{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-arrows {
+    position: absolute;
+    bottom: 0;
+    left: 0; 
+    right: 0; 
+    margin:30px auto 40px auto; 
+    display:flex;
+    flex-direction: row;
+    width: 40px;
+}
+
+.nav-arrows .fa {
+    color:#fff;
+    margin:0 10px 0 10px;
+}
+
+.main-bottom-texture{
+    position: absolute;
+    bottom: 0;
+    background-image: url('images/texture_bottom.png');
+    background-repeat:repeat-x;
+    width:100%;
+    margin: 0;
+    height: 30px;
+}
+
+.bottom-container {
+    padding:80px 0 60px 0;
+    position: relative;
+
+}
+
+.download-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.bottom-container > .container h3 {
+    color:#272727;
+    font-size: 2em;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px #969494;
+}
+
+.bottom-container > .container span {
+    color:#45C892;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.download-container > .primary-green {
+    background-color:#45C892;
+    border:0;
+    width: 200px;
+    padding:15px;
+    margin-top: 30px;
+    color:#fff;
+    border-radius: 50px;
+    box-shadow: 2px 3px 10px #969494;
+}
+
+footer {
+    background-image: url('images/texture.png');
+    height: 60px;
+    position: relative;
+    color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 10px;
+    
+}
+
+footer img{
+    height: 30px;
+}
+
+.footer-bottom-texture {
+    position: absolute;
+    bottom: 0;
+    background-image: url('images/texture_top.png');
+    background-repeat:repeat-x;
+    width:100%;
+    height: 15px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(255,255,255,0.7);
+  
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.trip:hover .overlay {
+  bottom: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.text {
+  white-space: pre-wrap; 
+  color: #272727;
+  font-size: 16px;
+  position: absolute;
+  overflow: hidden;
+  width: 180px;
+  font-family: 'Titillium Web';
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.fa-angle-double-right{
+    position: absolute;
+    top: 88%;
+    left: 88%;
+}
+
+@media(max-width:700px) {
+    
+    .trips {
+        max-width: 230px;
+        margin:0 auto 0 auto;
+    }
+    
+    .header-container {
+        margin-top:200px;
+        margin-right: 50px;
+    }
+    
+    .navbar-inverse {
+        background-image: none;
+        background-color: transparent;
+        border:0;
+        color:#fff;
+        padding:25px 30px 0 30px;
+    }
+}
+
+@media(max-width:500px) {
+    .header-container {
+        margin:100px 20px 0 20px;
+    }
+    
+}

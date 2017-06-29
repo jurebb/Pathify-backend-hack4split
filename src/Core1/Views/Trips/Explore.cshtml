@@ -1,0 +1,159 @@
+﻿@model IEnumerable<Core1.Models.Trip>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- MetaData -->
+    <meta charset="UTF-8">
+    <title>Pathify | Explore</title>
+    <meta name="description" content="Explore new places and share them with your friends">
+    <meta name="keywords" content="pathify,places,share,friends">
+    <meta name="author" content="Jure Baban, Toni Beović, Vana Brajčić, Božo Penović">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="~/images/favicon.png" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="~/styles/explore.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header-background">
+        <div class="background-cover">
+
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="~/images/logo.png">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li><a asp-controller="Trips" asp-action="Index">HOME</a></li>
+                            <li class="activated"><a asp-controller="Trips" asp-action="Explore">EXPLORE</a></li>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <li id="login-button"><a asp-controller="Trips" asp-action="Index">LOGIN</a></li>
+                            }
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a asp-controller="Trips" asp-action="MyTrips">MY TRIPS</a></li>
+                                <li style="border-bottom: 0;"><a style="font-size: 14px !important; margin-left: 50px;">Hello, @User.Identity.Name</a></li>
+                                <li id="login-button"><a asp-controller="Trips" asp-action="Logout">LOGOUT</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container search-container">
+                <form>
+                    <div class="form-group form-row">
+                        <i class="fa fa-search" aria-hidden="true"></i><input type="text" class="form-control" placeholder="Title" id="title">
+                    </div>
+            </div>
+
+            <div class="form-group form-row-second">
+                <i class="fa fa-angle-down fa-x2" aria-hidden="true"></i>
+                <input type="text" class="form-control" placeholder="Category" id="category">
+                <input type="text" class="form-control" placeholder="Tags" id="tags">
+                <button type="submit" id="submit-button">Search</button>
+            </div>
+
+
+            </form>
+
+        </div>
+    </div>
+    </div>
+
+    <div class="container-big">
+        <h1>EXPLORE <strong>TRIPS</strong></h1>
+        <div class="container padding-left-container">
+            <div class="row">
+                <div class="main_portfolio_content">
+                    <div class="col-md-3 col-sm-4 col-xs-12 single_portfolio_text">
+                        <img src="~/images/tripps/split2.jpg" alt="" />
+                        <div class="portfolio_images_overlay text-center">
+                            <h6>Znjan beach</h6>
+                            <div class="btn"><a asp-controller="Trips" asp-action="Trip" asp-route-tripName="Znjan beach" asp-route-id="1"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 single_portfolio_text">
+                        <img src="~/images/tripps/slika1.jpg" alt="" />
+                        <div class="portfolio_images_overlay text-center">
+                            <h6>Nima Splita do Splita</h6>
+                            <div class="btn"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 single_portfolio_text">
+                        <img src="~/images/tripps/split3.jpg" alt="" />
+                        <div class="portfolio_images_overlay text-center">
+                            <h6>Nima Splita do Splita</h6>
+                            <div class="btn"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 single_portfolio_text">
+                        <img src="~/images/tripps/split4.jpg" alt="" />
+                        <div class="portfolio_images_overlay text-center">
+                            <h6>Nima Splita do Splita</h6>
+                            <div class="btn"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 single_portfolio_text">
+                        <img src="~/images/tripps/split-20.jpg" alt="" />
+                        <div class="portfolio_images_overlay text-center">
+                            <h6>Nima Splita do Splita</h6>
+                            <div class="btn"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 single_portfolio_text">
+                        <img src="~/images/tripps/split-pogled.jpg" alt="" />
+                        <div class="portfolio_images_overlay text-center">
+                            <h6>Nima Splita do Splita</h6>
+                            <div class="btn"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 single_portfolio_text">
+                        <img src="~/images/tripps/split5.jpg" alt="" />
+                        <div class="portfolio_images_overlay text-center">
+                            <h6>Nima Splita do Splita</h6>
+                            <div class="btn"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 single_portfolio_text">
+                        <img src="~/images/tripps/split6.jpg" alt="" />
+                        <div class="portfolio_images_overlay text-center">
+                            <h6>Nima Splita do Splita</h6>
+                            <div class="btn"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn bottom-button">
+            <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+        </div>
+        <div class="footer-bottom-texture"></div>
+    </div>
+
+    <footer>
+        <a href="#"><img src="~/images/logo.png" /></a>
+    </footer>
+
+</body>
+</html>

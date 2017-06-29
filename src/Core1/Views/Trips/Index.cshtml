@@ -1,0 +1,363 @@
+﻿@model Core1.ViewModels.LoginViewModel
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- MetaData -->
+    <meta charset="UTF-8">
+    <title>Pathify</title>
+    <meta name="description" content="Explore new places and share them with your friends">
+    <meta name="keywords" content="pathify,places,share,friends">
+    <meta name="author" content="Jure Baban, Toni Beović, Vana Brajčić, Božo Penović">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="~/image/png" href="~/images/favicon.png" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="~/styles/main.css">
+    <link rel="stylesheet" href="~/styles/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+</head>
+
+<!--
+<body>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-controller="Auth" asp-action="Logout">Logout</a>
+    }
+    <div class="row">
+        <div>
+            <h1>Pathify</h1>
+            <h2>Welcome to Pathify</h2>
+            <p>Welcome to the website. You can view the trips by pressing the button below.</p>
+            <a asp-controller="Trips" asp-action="Trips">View trips</a>
+        </div>
+    </div>
+</body>
+</html>-->
+<body>
+    <div id="header-background">
+        <div class="background-cover">
+
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">
+                            <img src="~/images/logo.png">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="activated"><a asp-controller="Trips" asp-action="Index">HOME</a></li>
+                            <li><a asp-controller="Trips" asp-action="Explore">EXPLORE</a></li>
+                            @if (!User.Identity.IsAuthenticated)
+                            {
+                                <li id="login-button"><a href="#">LOGIN</a></li>
+                            }
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li><a asp-controller="Trips" asp-action="MyTrips">MY TRIPS</a></li>
+                                <li style="border-bottom: 0;"><a style="font-size: 14px !important; margin-left: 50px;">Hello, @User.Identity.Name</a></li>
+                                <li id="login-button"><a asp-controller="Trips" asp-action="Logout">LOGOUT</a></li>
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="header-container">
+                <p>Our task must be to free ourselves by widening our circle of compassion to embrace all living creatures and the whole of nature and its beauty.</p>
+                <p class="author">- Albert Einstein</p>
+            </div>
+
+            <div id="get-started">
+                <p>Get started</p>
+                <a href="#"><i class="fa fa-caret-down fa-3x" aria-hidden="true"></i></a>
+            </div>
+
+            <div class="header-bottom-texture"></div>
+        </div>
+    </div>
+
+    <div class="container main-carousel">
+        <div class="headers">
+            <h3>Last published</h3>
+            <p class="subtitle">- Our users experiences -</p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <div id="myCarousel" class="carousel slide">
+
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+
+                            <div class="item active">
+                                <div class="row-fluid">
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split2.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split3.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split4.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split-20.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div><!--/row-fluid-->
+                            </div><!--/item-->
+
+                            <div class="item">
+                                <div class="row-fluid">
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split5.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split6.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split-20.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split-pogled.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div><!--/row-fluid-->
+                            </div><!--/item-->
+
+                            <div class="item">
+                                <div class="row-fluid">
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/slika1.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split2.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split3.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 trip">
+                                        <div class="trip-haeder">
+                                            <h4>Šetnja vidilicom</h4>
+                                        </div>
+                                        <div class="trip-image-container">
+                                            <img src="~/images/tripps/split4.jpg" class="image-overlay" />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="text">
+                                                <p>Prema posljednjem popisu stanovništva, provedenom 2011. godine, Split ima 178.192 stanovnika, druga je po veličini hrvatska luka i treća luka na Mediteranu po broju putnika. </p>
+                                            </div>
+                                            <i class="fa fa-angle-double-right fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div><!--/row-fluid-->
+                            </div><!--/item-->
+
+                        </div><!--/carousel-inner-->
+
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="fa fa-angle-left fa-3x" aria-hidden="true"></i></a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="fa fa-angle-right fa-3x" aria-hidden="true"></i></a>
+                    </div><!--/myCarousel-->
+
+                </div><!--/well-->
+            </div>
+        </div>
+        <div class="main-bottom-texture"></div>
+    </div>
+
+    <div class="bottom-container">
+        <div class="container">
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <img src="~/images/mobile.png" class="img-responsive">
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 download-container">
+                <h3><span>Download</span> application <br>for your mobile phone</h3>
+
+                <button class="primary-green">1st version</button>
+            </div>
+        </div>
+        <div class="footer-bottom-texture"></div>
+    </div>
+
+    <footer>
+        <a href="#"><img src="~/images/logo.png" /></a>
+    </footer>
+
+    <!-- Login -->
+    <div id="login-overlay">
+        <div class="login-page">
+            <div class="form">
+                <form class="register-form">
+                    <input type="text" placeholder="First name" />
+                    <input type="password" placeholder="Last name" />
+                    <input type="text" placeholder="Username" />
+                    <input type="text" placeholder="Email adress" />
+                    <input type="password" placeholder="Password" />
+                    <button>Create account</button>
+                    <p class="message">Already have account? <a href="#">Sing in</a></p>
+                </form>
+                <form class="login-form" method="post" novalidate>
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <input type="text" placeholder="Username" asp-for="Username" />
+                    <input type="password" placeholder="Password" asp-for="Password" />
+                    <!--<button>Login</button>-->
+                    <input type="submit" value="Login" class="btn btn-success" />
+                    <p class="message">Not registered? <a href="#">Create Account</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="~/js/login.js"></script>
+
+</body>
+</html>
